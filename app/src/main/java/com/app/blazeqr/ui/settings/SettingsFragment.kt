@@ -22,11 +22,12 @@ class SettingsFragment : Fragment() {
     ): View? {
         settingsViewModel =
             ViewModelProviders.of(this).get(SettingsViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
+        val root = inflater.inflate(R.layout.fragment_settings, container, false)
+        val textView: TextView = root.findViewById(R.id.text_settings)
         settingsViewModel.text.observe(this, Observer {
             textView.text = it
         })
+
         return root
     }
 }
